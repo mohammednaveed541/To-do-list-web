@@ -1,0 +1,173 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+/* Logo Styling */
+.logo-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 100%; /* Ensure it spans the full width of the container */
+    box-sizing: border-box;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto;
+    display: block; /* Ensure it behaves as a block-level element */
+    margin: 0 auto; /* Center the logo horizontally */
+}
+
+/* Container for the Task Manager */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(145deg, #81d4fa, #4fc3f7);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Task Manager Header */
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    background: linear-gradient(135deg, #1e88e5, #4caf50);
+    -webkit-background-clip: text;
+    color: transparent;
+    letter-spacing: 3px;
+    padding: 20px 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    margin: 0;
+}
+
+/* Buttons and Input Fields */
+button, #task-input, #priority-select {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    outline: none;
+    width: 100%;
+    max-width: 400px;
+    margin: 10px 0;
+}
+
+button:hover, #task-input:hover, #priority-select:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+button:focus, #task-input:focus, #priority-select:focus {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transform: translateY(-3px);
+    border-color: #00bcd4;
+}
+
+button {
+    background: linear-gradient(135deg, #1e88e5, #80deea);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #4caf50, #66bb6a);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transform: translateY(-4px);
+}
+
+/* Task List Items */
+li {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+}
+
+li:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+}
+
+li .delete-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #ff1744;
+    font-size: 1.2rem;
+    padding: 8px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+li .delete-btn:hover {
+    color: #f44336;
+    transform: scale(1.1);
+}
+
+/* Priority Legend Styles */
+#priority-legend {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    color: #333;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+#priority-legend div {
+    display: flex;
+    align-items: center;
+}
+
+#priority-legend .color-box {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+#priority-legend .high { background-color: #ff4d4d; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); }
+#priority-legend .medium { background-color: #ffcc00; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); }
+#priority-legend .low { background-color: #66cc66; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); }
+
+/* Task List Items - Highlighting Based on Priority */
+li.high-priority { background-color: #ffcccc; }
+li.medium-priority { background-color: #fff9c4; }
+li.low-priority { background-color: #b3fbb9; }
+
+/* Responsive Design */
+@media screen and (max-width: 600px) {
+    .container { padding: 10px; }
+    #task-input, #priority-select, button { width: 100%; margin: 5px 0; }
+    #priority-legend { flex-direction: column; align-items: center; }
+}
